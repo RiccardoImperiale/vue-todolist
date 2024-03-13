@@ -1,0 +1,72 @@
+:root {
+    --todo-darkest: #0D0D0D;
+    --todo-darker: #1A1A1A;
+    --todo-dark: #262626;
+    --todo-secondary: #808080;
+    --todo-light: #F2F2F2;
+    --todo-secondary-dark: #333333;
+    --todo-primary: #4EA8DE;
+    --todo-primary-dark: #1E6F9F;
+    --todo-accent: #8284FA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--todo-darker);
+    font-family: sans-serif;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    background-color: var(--todo-darkest);
+}
+
+.task_input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1.5rem;
+    height: 3rem;
+    gap: .5rem;
+
+    & input,
+    button {
+        height: 100%;
+        border-radius: .4rem;
+        border: 3px solid var(--todo-darkest);
+        font-size: 1rem;
+    }
+
+    & input {
+        width: 80%;
+        background-color: var(--todo-dark);
+        padding-left: 1rem;
+        color: var(--todo-light);
+
+        &:focus {
+            outline: none;
+            border: 3px solid var(--todo-accent);
+        }
+    }
+
+    & button {
+        width: 20%;
+        background-color: var(--todo-primary-dark);
+        color: var(--todo-light);
+        cursor: pointer;
+    }
+}
