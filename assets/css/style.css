@@ -31,31 +31,35 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem 0;
+    padding: 5rem 0 6rem 0;
     background-color: var(--todo-darkest);
+}
+
+main {
+    color: var(--todo-light);
 }
 
 .task_input {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -1.5rem;
-    height: 3rem;
+    margin-top: -2rem;
+    height: 4rem;
     gap: .5rem;
 
     & input,
     button {
         height: 100%;
-        border-radius: .4rem;
+        border-radius: .5rem;
         border: 3px solid var(--todo-darkest);
         font-size: 1rem;
+        color: var(--todo-light);
     }
 
     & input {
-        width: 80%;
+        flex-grow: 1;
         background-color: var(--todo-dark);
         padding-left: 1rem;
-        color: var(--todo-light);
 
         &:focus {
             outline: none;
@@ -64,9 +68,78 @@ header {
     }
 
     & button {
-        width: 20%;
+        padding-inline: 1.5rem;
         background-color: var(--todo-primary-dark);
-        color: var(--todo-light);
         cursor: pointer;
+    }
+}
+
+.tasks_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5rem .5rem 1rem .5rem;
+
+    .number {
+        background-color: var(--todo-secondary-dark);
+        border-radius: 1rem;
+        padding: .25rem .75rem;
+        margin-left: .75rem;
+        line-height: 1rem;
+    }
+
+    .tasks_quantity {
+        display: flex;
+        align-items: center;
+
+        & h4 {
+            color: var(--todo-primary);
+        }
+    }
+
+    .tasks_completed {
+        display: flex;
+        align-items: center;
+
+        & h4 {
+            color: var(--todo-accent);
+        }
+    }
+
+
+}
+
+.task {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--todo-dark);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--todo-secondary-dark);
+
+    & img {
+        cursor: pointer;
+        width: 15px;
+        margin-left: auto;
+    }
+
+    .check_circle{
+        border: 3px solid var(--todo-primary);
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        cursor: pointer;
+    }
+}
+
+.no_task{
+    text-align: center;
+    color: var(--todo-secondary);
+
+    & img{
+        margin: 1rem 0;
     }
 }

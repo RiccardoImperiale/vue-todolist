@@ -15,18 +15,33 @@
         </header>
         <main>
             <div class="container">
-
                 <div class="task_input">
                     <input type="text" placeholder="Write here your new task">
                     <button>Add Task</button>
                 </div>
+                <div class="tasks_header">
+                    <div class="tasks_quantity">
+                        <h4>Tasks</h4>
+                        <div class="number">5</div>
+                    </div>
+                    <div class="tasks_completed">
+                        <h4>Completed</h4>
+                        <div class="number">3 di 5</div>
+                    </div>
+                </div>
+                <div class="tasks">
+                    <div v-if="tasks.length > 0" v-for="task in tasks" class="task">
+                        <div class="check_circle"></div>
+                        <div class="task_text">{{task.text}}</div>
+                        <img src="./assets/img/trash.png" alt="trashcan icon">
+                    </div>
+                    <div v-else class="no_task"> 
+                        <img src="./assets/img/clipboard.png" alt=""> 
+                        <div>Good Job! No todos left...</div>
+                    </div>
+                </div>
             </div>
         </main>
-
-        <h1>todolist</h1>
-        <ul>
-            <li v-for="task in tasks">{{task.text}}</li>
-        </ul>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
