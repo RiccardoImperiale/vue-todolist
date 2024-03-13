@@ -5,8 +5,8 @@ createApp({
         return {
             newTodo: null,
             tasks: [
-                { text: 'First todo', done: false },
-                { text: 'Second todo', done: true },
+                { text: "Stampare all'interno di una lista HTML un item per ogni todo.", done: false },
+                { text: 'Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.', done: false },
             ]
         }
     },
@@ -18,7 +18,7 @@ createApp({
             this.tasks[index].done = !this.tasks[index].done;
         },
         removeTask(index){
-            this.tasks.splice(index, 1)
+            this.tasks.splice(index, 1);
         }
     }
 }).mount('#app')

@@ -16,7 +16,7 @@
         <main>
             <div class="container">
                 <div class="task_input">
-                    <input v-model="newTodo" type="text" placeholder="Write here your new task">
+                    <input v-model="newTodo" @keyup.enter.trim="addTodo" type="text" placeholder="Write here your new task">
                     <button @click="addTodo">Add Task</button>
                 </div>
                 <div class="tasks_header">
