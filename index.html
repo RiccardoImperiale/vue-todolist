@@ -16,17 +16,17 @@
         <main>
             <div class="container">
                 <div class="task_input">
-                    <input v-model="newTodo" @keyup.enter.trim="addTodo" type="text" placeholder="Write here your new task">
+                    <input v-model="newTodo" @keyup.enter.trim="addTodo" type="text" placeholder="ADD NEW TASK...">
                     <button @click="addTodo">Add Task</button>
                 </div>
                 <div class="tasks_header">
                     <div class="tasks_quantity">
                         <h4>Tasks</h4>
-                        <div class="number">5</div>
+                        <div class="number">{{tasks.length}}</div>
                     </div>
                     <div class="tasks_completed">
                         <h4>Completed</h4>
-                        <div class="number">3 di 5</div>
+                        <div class="number">{{tasksCompleted}} di {{tasks.length}}</div>
                     </div>
                 </div>
                 <div class="tasks">
@@ -37,7 +37,7 @@
                     </div>
                     <div v-else class="no_task">
                         <img src="./assets/img/clipboard.png" alt="">
-                        <div>Good Job! No todos left...</div>
+                        <div>ADD NEW TASK...</div>
                     </div>
                 </div>
             </div>

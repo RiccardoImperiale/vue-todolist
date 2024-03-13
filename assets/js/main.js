@@ -5,9 +5,10 @@ createApp({
         return {
             newTodo: null,
             tasks: [
-                { text: "Stampare all'interno di una lista HTML un item per ogni todo.", done: false },
-                { text: 'Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.', done: false },
-            ]
+                // { text: "Stampare all'interno di una lista HTML un item per ogni todo.", done: false },
+                // { text: 'Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.', done: false },
+            ],
+            tasksCompleted: 0
         }
     },
     methods: {
@@ -16,8 +17,10 @@ createApp({
         },
         toggleDone(index) {
             this.tasks[index].done = !this.tasks[index].done;
+            this.tasks[index].done ? this.tasksCompleted++ : this.tasksCompleted--;
         },
-        removeTask(index){
+        removeTask(index) {
+            this.tasks[index].done && this.tasksCompleted--;
             this.tasks.splice(index, 1);
         }
     }
