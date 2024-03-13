@@ -16,8 +16,8 @@
         <main>
             <div class="container">
                 <div class="task_input">
-                    <input type="text" placeholder="Write here your new task">
-                    <button>Add Task</button>
+                    <input v-model="newTodo" type="text" placeholder="Write here your new task">
+                    <button @click="addTodo">Add Task</button>
                 </div>
                 <div class="tasks_header">
                     <div class="tasks_quantity">
@@ -30,9 +30,9 @@
                     </div>
                 </div>
                 <div class="tasks">
-                    <div v-if="tasks.length > 0" v-for="task in tasks" class="task">
-                        <div class="check_circle"></div>
-                        <div class="task_text">{{task.text}}</div>
+                    <div v-if="tasks.length > 0" v-for="(task, index) in tasks" class="task">
+                        <div @click="toggleDone(index)" :class="task.done ? 'done_circle' : 'check_circle'"></div>
+                        <div :class="task.done && 'grayed'">{{task.text}}</div>
                         <img src="./assets/img/trash.png" alt="trashcan icon">
                     </div>
                     <div v-else class="no_task"> 

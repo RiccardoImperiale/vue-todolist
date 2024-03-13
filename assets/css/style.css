@@ -133,6 +133,25 @@ main {
         margin-right: 1rem;
         cursor: pointer;
     }
+
+    .done_circle{
+        border: 3px solid var(--todo-accent);
+        background-color: var(--todo-accent);
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+        cursor: pointer;
+        position: relative;
+
+        &::after{
+            content: '✓';
+            position: absolute;
+            inset: 0; 
+            text-align: center;
+            color: var(--todo-light);
+        }
+    }
 }
 
 .no_task{
@@ -142,4 +161,9 @@ main {
     & img{
         margin: 1rem 0;
     }
+}
+
+.grayed {
+    color: var(--todo-secondary);
+    text-decoration: line-through;
 }
